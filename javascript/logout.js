@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-import { getFirestore, getDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
+import { getFirestore, getDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCGevvJoJoStRPr5Xn_qYjkfc3FLH1dCu4",
@@ -14,52 +14,56 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth();
 const db = getFirestore();
 
-onAuthStateChanged(auth, (user) => {
-    const loggedInUserId = localStorage.getItem('loggedInUserId');
-    if (loggedInUserId) {
-        console.log(user);
-        const docRef = doc(db, "users", loggedInUserId);
-        getDoc(docRef)
-            .then((docSnap) => {
+// Select navbar elements
+const signInLink = document.getElementById("signInLink");
+const userInfoPage = document.getElementById("userInfoPage");
+
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        // User is signed in
+        // signInLink.style.display = "none"; // Hide login
+        
+
+        // Fetch user data from Firestore
+        const userId = localStorage.getItem("loggedInUserId");
+        if (userId) {
+            try {
+                const docRef = doc(db, "users", userId);
+                const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
                     const userData = docSnap.data();
-                    // logout.style.display="block";
-                    document.getElementById('loggedUserFName').innerText = userData.firstName;
-                    document.getElementById('loggedUserLName').innerText = userData.lastName;
-                    document.getElementById('loggedUserEmail').innerText = userData.email;
-
-
-
+                    document.getElementById("loggedUserFName").innerText = userData.firstName;
+                    document.getElementById("loggedUserLName").innerText = userData.lastName;
+                    document.getElementById("loggedUserEmail").innerText = userData.email;
+                } else {
+                    console.log("No document found matching ID");
                 }
-                else {
-                    console.log("no document found matching id")
-                }
-            })
-            .catch((error) => {
-                userInfoPage.style.display = "block";
-                signInLink.style.display = "none";
-                console.log("Error getting document");
-            })
+            } catch (error) {
+                console.error("Error getting user document:", error);
+            }
+        } else {
+            console.log("User ID not found in local storage");
+        }
+    } else {
+        // User is signed out
+        signInLink.style.display = "block"; // Show login
+        userInfoPage.style.display = "none"; // Hide user info
     }
-    else {
-        console.log("User Id not Found in Local storage")
-    }
-})
+    userInfoPage.style.display = "block"; // Show user info
+});
 
-const logoutButton = document.getElementById('logout');
-
-logoutButton.addEventListener('click', () => {
-    localStorage.removeItem('loggedInUserId');
+// Logout function
+const logoutButton = document.getElementById("logout");
+logoutButton.addEventListener("click", () => {
+    localStorage.removeItem("loggedInUserId");
     signOut(auth)
         .then(() => {
-            logout.style.display = "none";
-            window.location.href = './../index.html';
+            window.location.href = "./../index.html";
         })
         .catch((error) => {
-            console.error('Error Signing out:', error);
-        })
-})
+            console.error("Error Signing out:", error);
+        });
+});

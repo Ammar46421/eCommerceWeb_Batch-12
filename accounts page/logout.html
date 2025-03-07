@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="./../styles/homepage.css">
+    <link rel="stylesheet" href="./../styles/styles.css">
+    <script type="module" src="./../javascript/logout.js"></script>
+    <!-- <script type="module" src="./../javascript/firebaseAuth.js"></script> -->
+  </head>
+  <body>
+
+    <nav id="Navbar">
+        <div id="title"><a href="#">E-Buy Store</a></div>
+        <div id="nav-list">
+          <ul>
+            <li><a href="./../products/products.html">Home</a></li>
+            <!-- <li><a href="#" >Products</a></li> -->
+            <!-- <li><a href="#" id="signInLink">Login</a></li> -->
+            <!-- <li id="userInfoPage" style="display: none">
+              <a href="./../accounts page/logout.html">User</a>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+
+
+    <h3 id="backToHome">
+      <a href="./../index.html" style="color: white; text-decoration: none"
+        >Back To Homepage</a
+      >
+    </h3>
+    <h1>Welcome to the Homepage</h1>
+    <div>First Name: <span id="loggedUserFName"></span></div>
+    <div>Last Name: <span id="loggedUserLName"></span></div>
+    <div>Email: <span id="loggedUserEmail"></span></div>
+    <button id="logout">Logout</button>
+  </body>
+</html>

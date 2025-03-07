@@ -55,6 +55,7 @@ body{
     padding: 14px 16px;
     text-decoration: none;
     color: white;
+    
 }
 
 #Navbar #nav-list li a{
@@ -64,4 +65,15 @@ body{
     list-style: none;
     text-decoration: none;
     font-size: 25px;
+    
+}
+
+#userInfoPage{
+    /* float: right; */
+    /* display: flex; */
+    /* color: white;
+    list-style: none;
+    text-decoration: none;
+    font-size: 25px; */
+    margin-left: -1px;
 }
