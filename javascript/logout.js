@@ -23,6 +23,11 @@ const signInLink = document.getElementById("signInLink");
 const userInfoPage = document.getElementById("userInfoPage");
 
 onAuthStateChanged(auth, async (user) => {
+    // this if statement stops the user to access others pages without signin
+    if (!user && !window.location.pathname.includes('index.html')) {
+        window.location.href = './../index.html';
+      }
+
     if (user) {
         // User is signed in
         // signInLink.style.display = "none"; // Hide login
@@ -54,6 +59,7 @@ onAuthStateChanged(auth, async (user) => {
         userInfoPage.style.display = "none"; // Hide user info
     }
     // userInfoPage.style.display = "block"; // Show user info
+    
 });
 
 // Logout function
