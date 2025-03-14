@@ -22,7 +22,7 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         if (user.uid === ALLOWED_UID) {
             document.getElementById("adminSection").style.display = "block";
-            document.getElementById("accessDenied").style.display = "none";
+            // document.getElementById("accessDenied").style.display = "none";
         } else {
             document.getElementById("adminSection").style.display = "none";
             document.getElementById("accessDenied").innerText = "Access Denied: You are not authorized.";
