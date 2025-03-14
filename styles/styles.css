@@ -72,6 +72,11 @@ body {
 
 }
 
+#user{
+    background-color: #ffffff !important;
+    color: white;
+}
+
 #userInfoPage {
     /* float: right; */
     /* display: flex; */
