@@ -3,10 +3,10 @@ body {
     margin: 0;
     font-family: sans-serif;
     /* background: linear-gradient(to right, #e2e2e2, #8f8f8f); */
-    background-image: url(https://media.istockphoto.com/id/941302930/vector/online-shopping-smartphone-turned-into-internet-shop-concept-of-mobile-marketing-and-e.jpg?s=612x612&w=0&k=20&c=oEaIaAVRL6w7juxEIVwFPISjW_XkoYbLmK_VRWjNaEk=);
+    /* background-image: url(https://media.istockphoto.com/id/941302930/vector/online-shopping-smartphone-turned-into-internet-shop-concept-of-mobile-marketing-and-e.jpg?s=612x612&w=0&k=20&c=oEaIaAVRL6w7juxEIVwFPISjW_XkoYbLmK_VRWjNaEk=);
     background-repeat: no-repeat;
     background-size: cover;
-    size-adjust: 100%;
+    size-adjust: 100%; */
 }
 
 
@@ -72,10 +72,10 @@ body {
 
 }
 
-#user{
+/* #user{
     background-color: #ffffff !important;
     color: white;
-}
+} */
 
 #userInfoPage {
     /* float: right; */
