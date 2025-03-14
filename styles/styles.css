@@ -3,10 +3,10 @@ body {
     margin: 0;
     font-family: sans-serif;
     /* background: linear-gradient(to right, #e2e2e2, #8f8f8f); */
-    /* background-image: url(https://static.vecteezy.com/system/resources/thumbnails/041/486/768/small/ai-generated-islamic-library-holy-quran-books-arranged-photo.jpg);
+    background-image: url(https://media.istockphoto.com/id/941302930/vector/online-shopping-smartphone-turned-into-internet-shop-concept-of-mobile-marketing-and-e.jpg?s=612x612&w=0&k=20&c=oEaIaAVRL6w7juxEIVwFPISjW_XkoYbLmK_VRWjNaEk=);
     background-repeat: no-repeat;
     background-size: cover;
-    size-adjust: 100%; */
+    size-adjust: 100%;
 }
 
 
@@ -136,3 +136,23 @@ body {
 
 
 /* #background-image {} */
+
+
+#info {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;  /* Centers vertically */
+    height: 100vh;  /* Full height of the viewport */
+    text-align: center;  /* Center the text */
+}
+
+#info p {
+    color: white;  /* White text */
+    font-size: 24px;  /* Adjust size as needed */
+    font-weight: bold;  /* Make it bold */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 3px 3px 0px black, -3px -3px 0px black, 
+                 -3px 3px 0px black, 3px -3px 0px black; 
+    width: 80%;  /* Adjust width for better readability */
+    max-width: 800px;  /* Limit width for better appearance */
+}

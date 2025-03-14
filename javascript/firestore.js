@@ -39,9 +39,9 @@ if (productForm) {
     productForm.addEventListener("submit", async (event) => {
         event.preventDefault();
         
-        const title = document.getElementById("title").value.trim();
-        const description = document.getElementById("description").value.trim();
-        const imageLink = document.getElementById("imageLink").value.trim();
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const imageLink = document.getElementById("imageLink").value;
         const price = parseFloat(document.getElementById("price").value) || 0;
 
         if (!title || !description || !imageLink || price <= 0) {
