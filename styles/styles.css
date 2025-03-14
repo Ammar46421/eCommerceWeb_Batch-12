@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    background: linear-gradient(to right, #e2e2e2, #8f8f8f);
+    /* background: linear-gradient(to right, #e2e2e2, #8f8f8f); */
     /* background-image: url(https://static.vecteezy.com/system/resources/thumbnails/041/486/768/small/ai-generated-islamic-library-holy-quran-books-arranged-photo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -83,4 +83,4 @@ body {
 }
 
 
-#background-image {}
+/* #background-image {} */
