@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products</title>
-    <link rel="stylesheet" href="./../styles/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./../styles/styles.css" />
+  </head>
+  <body>
     <!-- Navbar Start -->
     <nav id="Navbar">
-        <div id="title"><a href="#">E-Buy Store</a></div>
-        <div id="nav-list">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#" >Cart</a></li>
-            <!-- <li><a href="#" id="signInLink">Login</a></li> -->
-            <li id="userInfoPage">
-              <a href="./../accounts page/logout.html">User</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <div id="title"><a href="#">E-Buy Store</a></div>
+      <div id="nav-list">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Cart</a></li>
+          <!-- <li><a href="#" id="signInLink">Login</a></li> -->
+          <li id="userInfoPage">
+            <a href="./../accounts page/logout.html">User</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <!-- Navbar end -->
+
+    <!-- admin form start -->
+
+    <div id="adminSection" style="display: none">
+      <h2>Add Product</h2>
+      <form id="productForm">
+        <input type="text" id="title" placeholder="Product Title" required />
+        <textarea
+          id="description"
+          placeholder="Description"
+          required
+        ></textarea>
+        <input type="text" id="imageLink" placeholder="Image URL" required />
+        <input type="number" id="price" placeholder="Price" required />
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+    <!-- admin form end -->
+
+    <script type="module" src="admin.js"></script>
     <script type="module" src="./../javascript/firebaseAuth.js"></script>
     <script type="module" src="./../javascript/logout.js"></script>
-</body>
+  </body>
 </html>
