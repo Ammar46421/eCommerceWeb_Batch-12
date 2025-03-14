@@ -78,19 +78,20 @@
         ></textarea>
         <input type="text" id="imageLink" placeholder="Image URL" required />
         <input type="number" id="price" placeholder="Price" required />
-        <button type="submit">Add Product</button>
+        <button type="submit" onclick="addProduct()">Add Product</button>
       </form>
     </div>
     <!-- admin form end -->   
 
     <!-- product list -->
-     <h2>products</h2>
-    <div id="productList"></div>
-
+    <section id="productSection">
+      <h2 id="recentProducts">Products</h2>
+      <div id="productList"></div>
+    </section>
 
     <script type="module" src="admin.js"></script>
     <script type="module" src="./../javascript/firebaseAuth.js"></script>
-    <script type="module" src="./../javascript/logout.js"></script>
+    <!-- <script type="module" src="./../javascript/logout.js"></script> -->
     <script type="module" src="./../javascript/firestore.js"></script>
   </body>
 </html>

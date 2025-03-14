@@ -3,6 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebas
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 import { getFirestore, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyAYai12ElU9K5E0kQKX7BNz45Spj2j8sII",
     authDomain: "e-commerce-4e9d6.firebaseapp.com",
@@ -16,7 +17,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore();
+const db = getFirestore(app);
 
 function showMessage(message, divId) {
     var messageDiv = document.getElementById(divId);
@@ -98,3 +99,8 @@ signIn.addEventListener('click', (event) => {
             }
         });
 });
+
+
+
+
+export { auth, db, onAuthStateChanged, signInWithEmailAndPassword, signOut, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, getDoc };
